@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IndexService } from '../../services/index.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-editar',
@@ -26,10 +27,14 @@ export class EditarComponent implements OnInit{
     });
   }
 
-  onSubmit(): void {
-    this.indexService.editar(this.id, this.movie).subscribe(() => {
-      alert('Película actualizada correctamente');
-      this.router.navigate(['/movie/'+this.id]);
-    });
+  onSubmit(form: NgForm): void {
+  if (form.invalid) {
+    return;
   }
+
+  this.indexService.editar(this.id, this.movie).subscribe(() => {
+    alert('Película actualizada correctamente');
+    this.router.navigate(['/movie/' + this.id]);
+  });
+}
 }

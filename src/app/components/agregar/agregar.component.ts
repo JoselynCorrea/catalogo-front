@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { IndexService } from '../../services/index.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-agregar',
@@ -19,10 +20,15 @@ export class AgregarComponent {
 
   constructor(private indexService: IndexService, private router: Router) {}
 
-  onSubmit(): void {
+  onSubmit(form: NgForm): void {
+    if (form.invalid) {
+      return; // No envía si el formulario no es válido
+    }
+
     this.indexService.agregar(this.movie).subscribe(() => {
       alert('Película agregada correctamente');
       this.router.navigate(['/movies']);
     });
   }
+
 }
