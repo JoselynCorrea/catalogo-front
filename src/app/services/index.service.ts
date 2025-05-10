@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class IndexService {
 
-  private apiUrl = 'http://127.0.0.1:8000/api/movie'; 
+  private apiUrl = 'https://catalogo-back-7w77.onrender.com/api/movie'; 
 
   constructor(private http: HttpClient) { }
 
