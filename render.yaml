@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: angular-app
+    env: static
+    staticPublishPath: dist/catalogo-frontend/browser
+    buildCommand: npm install && npm run build -- --configuration=production
