@@ -9,16 +9,17 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" [ngClass]="{ 'show': isMenuOpen }">
-          <ul class="navbar-nav ms-auto w-100 text-end text-lg-start">
-            <li class="nav-item">
-              <a class="nav-link text-dark fw-semibold" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="toggleMenu()">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark fw-semibold" routerLink="/movies" routerLinkActive="active" (click)="toggleMenu()">Catálogo</a>
-            </li>
-          </ul>
-        </div>
+        <div class="collapse navbar-collapse justify-content-end" [ngClass]="{ 'show': isMenuOpen }">
+  <ul class="navbar-nav text-end">
+    <li class="nav-item">
+      <a class="nav-link text-dark fw-semibold" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="toggleMenu()">Inicio</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-dark fw-semibold" routerLink="/movies" routerLinkActive="active" (click)="toggleMenu()">Catálogo</a>
+    </li>
+  </ul>
+</div>
+
       </nav>
     </div>
   </header>
