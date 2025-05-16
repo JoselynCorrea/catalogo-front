@@ -1,20 +1,27 @@
 <div class="d-flex flex-column min-vh-100 bg-light" style="background: url('../assets/fondo.png') center center no-repeat fixed; background-size: cover;">
     
-    <header class="py-3 border-bottom bg-white shadow-sm">
-        <div class="container d-flex align-items-center">
-            <img src="../assets/logo.png" alt="Catálogo de Películas" class="me-3" height="100">
-            <nav class="ms-auto">
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark fw-semibold" routerLink="/">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark fw-semibold" routerLink="/movies">Catálogo</a>
-                    </li>
-                </ul>
-            </nav>
+  <header class="py-3 border-bottom bg-white shadow-sm">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <img src="https://drive.google.com/thumbnail?id=1PLm25UQTcphn11RXpvtxe_OwSwcZOik7" alt="Catálogo de Películas" class="me-3" height="80" />
+
+        <button class="navbar-toggler ms-auto" type="button" (click)="toggleMenu()" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" [ngClass]="{ 'show': isMenuOpen }">
+          <ul class="navbar-nav ms-auto w-100 text-end text-lg-start">
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-semibold" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="toggleMenu()">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-semibold" routerLink="/movies" routerLinkActive="active" (click)="toggleMenu()">Catálogo</a>
+            </li>
+          </ul>
         </div>
-    </header>
+      </nav>
+    </div>
+  </header>
 
     <main class="flex-grow-1">
         <router-outlet></router-outlet>
@@ -24,7 +31,6 @@
         <ul class="list-unstyled d-flex justify-content-center gap-3 flex-wrap m-0">
             <li>Materia: <span class="fw-bold">Conceptualización de servicios en la nube</span></li>
             <li>Nombre: <span class="fw-bold">Joselyn Correa Jiménez</span></li>
-            <li>Código: <span class="fw-bold">223983443</span></li>
             <li>Contacto: <a href="mailto:joselyn.correa3443@alumnos.udg.mx" class="text-decoration-none">joselyn.correa3443&#64;alumnos.udg.mx</a></li>
         </ul>
     </footer>
