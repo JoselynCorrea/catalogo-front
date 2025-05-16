@@ -31,8 +31,7 @@
                 "glob": "_redirects*",
                 "input": "./",
                 "output": "./"
-              },
-                "src/static.json"
+              }
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
