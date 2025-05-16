@@ -9,6 +9,7 @@ export const routes: Routes = [
   { path: '', redirectTo: 'index', pathMatch: 'full' },
   { path: 'index', component: IndexComponent}, 
   { path: 'movies', component: MoviesComponent },
+  { path: 'movies', redirectTo: 'movies', pathMatch: 'full' },
   { path: 'movie/:id', component: MovieComponent },
   { path: 'agregar', component: AgregarComponent },
   { path: 'editar/:id', component: EditarComponent },
